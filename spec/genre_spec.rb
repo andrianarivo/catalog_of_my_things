@@ -1,4 +1,4 @@
-require_relative '../classes/genre.rb' # Adjust the path as per your project structure
+require_relative '../classes/genre.rb'
 
 RSpec.describe Genre do
   # The following method allows us to create a new instance of the Genre class before each test.
