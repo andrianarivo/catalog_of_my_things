@@ -1,4 +1,4 @@
-require 'date'
+require_relative 'date'
 
 class Item
   attr_accessor :publish_date, :genre
