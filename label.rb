@@ -1,5 +1,5 @@
 
-class Label < Item
+class Label
   attr_accessor :title, :color
   attr_reader :items
 
@@ -13,5 +13,9 @@ class Label < Item
   def add_item(item)
     item.label = self
     @items << item unless @items.include? item
+  end
+
+  def to_s
+    "Id: #{@id} Title: #{@title} Color: #{@color}"
   end
 end
