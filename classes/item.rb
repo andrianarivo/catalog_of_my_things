@@ -8,12 +8,10 @@ class Item
     @id = Random.rand(100...10_000)
     @archived = archived
     @publish_date = publish_date
-    @genre = []
   end
 
   def move_to_archive
     return @archived = true if can_be_archived?
-
     @archived = false
   end
 
