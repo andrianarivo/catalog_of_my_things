@@ -1,7 +1,9 @@
 require_relative 'takeinput'
+require_relative 'app'
 
 class Main
   def initialize
+    @app = App.new
     prompt
   end
 
@@ -10,6 +12,7 @@ class Main
     loop do
       display_options
       option = TakeInput.new.take_input
+      @app.run(option)
 
       break if option == 7
     end
