@@ -5,7 +5,6 @@ class Item
   attr_reader :id, :archived
 
   def initialize(publish_date, archived: true)
-
     @id = Random.rand(100...10_000)
     @archived = archived
     @publish_date = publish_date
