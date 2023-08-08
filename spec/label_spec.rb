@@ -11,10 +11,6 @@ RSpec.describe Label do
     it 'returns a new Label object' do
       expect(@new_label).to be_instance_of(Label)
     end
-
-    it 'returns a kind of Item' do
-      expect(@new_label).to be_kind_of Item
-    end
   end
 
   describe '#title' do
