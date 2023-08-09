@@ -61,13 +61,13 @@ CREATE TABLE label(
 );
 
 CREATE TABLE music_album(
-  id INT SERIAL PRIMARY KEY,
+  id INT GENERATED ALWAYS AS IDENTITY,
   on_spotify BOOLEAN,
-  publish_date DATE,
-  archive BOOLEAN
+  FOREIGN KEY(id) REFERENCES item(id)
 );
 
 CREATE TABLE genre(
-  id INT SERIAL PRIMARY KEY,
-  name VARCHAR(100)
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(255)
+  PRIMARY KEY(id)
 );
