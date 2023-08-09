@@ -12,7 +12,7 @@ class Main
     loop do
       display_options
       option = TakeInput.new.take_input
-      @app.run(option)
+      @app.first_run(option)
 
       break if option == 13
     end
