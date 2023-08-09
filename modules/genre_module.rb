@@ -9,6 +9,8 @@ module GenreModule
     genre = Genre.new(name)
     @genres << genre
     puts 'Genre is successfully added!!'
+    puts ''
+    puts '==='
   end
 
   def list_all_genres

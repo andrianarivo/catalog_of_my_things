@@ -20,10 +20,8 @@ class Item
 
   def can_be_archived?
     date_now = Date.today.year
-
-    past_date = (Date.parse @publish_date).year
-
-    difference = (past_date - date_now).abs
-    difference > 10
+    past_date = Date.parse(@publish_date).year
+    difference = (date_now - past_date).abs
+    difference >= 10
   end
 end

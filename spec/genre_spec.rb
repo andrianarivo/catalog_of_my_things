@@ -1,4 +1,4 @@
-require_relative '../classes/genre.rb'
+require_relative '../classes/genre'
 
 RSpec.describe Genre do
   # The following method allows us to create a new instance of the Genre class before each test.
@@ -21,7 +21,7 @@ RSpec.describe Genre do
   describe '#add_item' do
     it 'adds an item to the items array' do
       item = double('Item')
-      allow(item).to receive(:genre=).with(genre) 
+      allow(item).to receive(:genre=).with(genre)
       genre.add_item(item)
 
       expect(genre.items).to include(item)

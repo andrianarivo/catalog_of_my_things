@@ -15,7 +15,9 @@ module MusicAlbumModule
 
   def list_music_album
     @music_albums.each_with_index do |music_album_instance, index|
-      puts "#{index + 1}) Id: '#{music_album_instance.id}', Published Date: '#{music_album_instance.publish_date}', On Spotify: '#{music_album_instance.on_spotify}'"
+      puts "#{index + 1}) Id: '#{music_album_instance.id}'",
+           ", Published Date: '#{music_album_instance.publish_date}'",
+           ", On Spotify: '#{music_album_instance.on_spotify}'"
     end
   end
 end
