@@ -1,4 +1,3 @@
-
 module JsonHandlers
   def save_files
     File.write('books.json', @books.to_json)
