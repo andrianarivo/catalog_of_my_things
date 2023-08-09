@@ -1,18 +1,25 @@
 require_relative '../classes/author'
+require_relative 'item_module'
 
 module AuthorModule
-  def create_author(item = nil)
+  include ItemModule
+
+  def create_author
     print 'First Name:'
     first_name = gets.chomp
     print 'Last Name:'
     last_name = gets.chomp
-    if item.nil?
-      @authors << Author.new(first_name, last_name)
-    else
-      new_author = Author.new(first_name, last_name)
-      new_author.add_item(item)
-      @authors << new_author
-    end
+    new_author = Author.new(first_name, last_name)
+    @authors << new_author
+    link_author_item(new_author)
+    puts 'author created successfully!'
+  end
+
+  def link_author_item(author)
+    puts 'choose one item by index (NOT ID) to link with this Author: '
+    list_items
+    item_idx = gets.chomp.to_i
+    author.add_item(@items[item_idx - 1])
   end
 
   def list_authors
