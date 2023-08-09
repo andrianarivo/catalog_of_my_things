@@ -2,13 +2,13 @@ require_relative '../classes/book'
 
 module BookModule
   def create_book
-    print 'Published date: '
+    print 'Published date (mm-dd-yyyy): '
     publish_date = gets.chomp
 
     print 'Publisher name: '
     publisher = gets.chomp
 
-    print 'Cover state: '
+    print 'Cover state (good/bad): '
     cover_state = gets.chomp
 
     new_book = Book.new(publish_date, publisher, cover_state)
