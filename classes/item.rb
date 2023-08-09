@@ -16,6 +16,10 @@ class Item
     @archived = false
   end
 
+  def to_s
+    "ID: #{@id} publish date: #{@publish_date} archived: #{@archived ? 'Y' : 'N'}"
+  end
+
   private
 
   def can_be_archived?
