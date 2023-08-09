@@ -17,11 +17,15 @@ describe Game do
     it 'takes parameters and returns a game object' do
       expect(@game).to be_an_instance_of(Game)
     end
+
+    it 'check if game inherits Item' do
+      expect(@game).to be_kind_of Item
+    end
   end
 
   describe '#move_to_archive' do
-    it 'check if item can be archived' do
-      expect(@item.move_to_archive).to be false
+    it 'check if private method is overridden' do
+      expect(@game.move_to_archive).to be false
     end
   end
 end
