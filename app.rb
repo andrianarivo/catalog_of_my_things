@@ -1,9 +1,11 @@
+require 'json'
 require_relative 'modules/game_module'
 require_relative 'modules/music_album_module'
 require_relative 'modules/genre_module'
 require_relative 'modules/author_module'
 require_relative 'modules/book_module'
 require_relative 'modules/label_module'
+require_relative 'data_manager'
 
 class App
   include GameModule
@@ -12,15 +14,16 @@ class App
   include AuthorModule
   include LabelModule
   include BookModule
+  include DataManager
 
   def initialize
     @items = []
-    @games = []
-    @music_albums = []
+    load_games
+    load_music_albums
+    load_books
     @genres = []
     @authors = []
-    @labels = []
-    @books = []
+    load_labels
   end
 
   def first_run(option)
@@ -57,6 +60,7 @@ class App
     when 12
       create_author
     else
+      save_files
       puts 'Thank you for using this app!'
       exit
     end

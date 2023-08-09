@@ -17,7 +17,7 @@ class Item
   end
 
   def to_s
-    "ID: #{@id} publish date: #{@publish_date} archived: #{@archived ? 'Y' : 'N'}"
+    "[#{self.class.name}] ID: #{@id} publish date: #{@publish_date} archived: #{@archived ? 'Y' : 'N'}"
   end
 
   private
