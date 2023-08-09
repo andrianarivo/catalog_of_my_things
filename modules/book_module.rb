@@ -11,7 +11,9 @@ module BookModule
     print 'Cover state: '
     cover_state = gets.chomp
 
-    @books << Book.new(publish_date, publisher, cover_state)
+    new_book = Book.new(publish_date, publisher, cover_state)
+    @books << new_book
+    @items << new_book
     puts 'Book has been added successfully'
   end
 
