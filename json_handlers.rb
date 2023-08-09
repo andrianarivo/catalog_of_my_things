@@ -1,12 +1,12 @@
 
 module JsonHandlers
   def save_files
-    File.open('books.json', 'w') { |file| file.write(@books.to_json) }
-    File.open('games.json', 'w') { |file| file.write(@games.to_json) }
-    File.open('music_albums.json', 'w') { |file| file.write(@music_albums.to_json) }
-    File.open('authors.json', 'w') { |file| file.write(@authors.to_json) }
-    File.open('labels.json', 'w') { |file| file.write(@labels.to_json) }
-    File.open('genres.json', 'w') { |file| file.write(@genres.to_json) }
+    File.write('books.json', @books.to_json)
+    File.write('games.json', @games.to_json)
+    File.write('music_albums.json', @music_albums.to_json)
+    File.write('authors.json', @authors.to_json)
+    File.write('labels.json', @labels.to_json)
+    File.write('genres.json', @genres.to_json)
   end
 
   # rubocop:disable Style/GuardClause
