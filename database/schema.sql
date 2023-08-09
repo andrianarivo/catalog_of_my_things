@@ -59,3 +59,15 @@ CREATE TABLE label(
     title VARCHAR(255),
     color VARCHAR(255),
 );
+
+CREATE TABLE music_album(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  on_spotify BOOLEAN,
+  FOREIGN KEY(id) REFERENCES item(id)
+);
+
+CREATE TABLE genre(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(255)
+  PRIMARY KEY(id)
+);
