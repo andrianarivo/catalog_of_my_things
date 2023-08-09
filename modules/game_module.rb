@@ -6,13 +6,13 @@ module GameModule
   def create_game
     print 'Publish Date (mm-dd-yyyy): '
     publish_date = gets.chomp
-    item = Item.new(publish_date)
     print 'Multiplayer (Y/N): '
     multi = gets.chomp
     print 'Last played (mm-dd-yyyy): '
     last_played = gets.chomp
-    game = Game.new(multi, last_played, item.publish_date)
+    game = Game.new(multi, last_played, publish_date)
     @games << game
+    @items << game
     puts 'Game created successfully'
   end
 
