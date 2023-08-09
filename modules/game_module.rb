@@ -18,8 +18,12 @@ module GameModule
 
   def list_games
     @games.each_with_index do |game, index|
+      puts '------------------------------- '
+      puts 'Games: '
+      puts '------------------------------- '
       puts "#{index + 1}) Id: '#{game.id}', Published: '#{game.publish_date}',",
            "   Multiplayer: '#{game.multiplayer}', Last Played: '#{game.last_played_at}'"
+      puts '------------------------------- '
     end
   end
 end
