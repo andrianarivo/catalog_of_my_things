@@ -14,7 +14,7 @@ class Main
       option = TakeInput.new.take_input
       @app.run(option)
 
-      break if option == 7
+      break if option == 13
     end
   end
 
@@ -23,10 +23,16 @@ class Main
     puts '1. - List all books'
     puts '2. - List all music albums'
     puts '3. - List games'
-    puts '4. - Create a book'
-    puts '5. - Create a music album'
-    puts '6. - Create a game'
-    puts '7. - Exit'
+    puts '4. - List all genres'
+    puts '5. - List all labels'
+    puts '6. - List all authors'
+    puts '7. - Create a book'
+    puts '8. - Create a music album'
+    puts '9. - Create a game'
+    puts '10. - Create a genre'
+    puts '11. - Create a label'
+    puts '12. - Create a author'
+    puts '13. - Exit'
   end
 end
 
