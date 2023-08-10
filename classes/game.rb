@@ -9,6 +9,16 @@ class Game < Item
     @last_played_at = last_played_at
   end
 
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'id' => @id,
+      'multiplayer' => @multiplayer,
+      'publish_date' => @publish_date,
+      'last_played_at' => @last_played_at
+    }.to_json(*args)
+  end
+
   private
 
   def can_be_archived?
