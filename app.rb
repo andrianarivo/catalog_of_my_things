@@ -22,8 +22,8 @@ class App
     load_music_albums
     load_books
     @genres = []
-    @authors = []
     load_labels
+    load_authors
   end
 
   def first_run(option)

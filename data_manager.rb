@@ -1,3 +1,5 @@
+require 'fileutils'
+
 BOOK_FILE = 'data/books.json'.freeze
 LABEL_FILE = 'data/labels.json'.freeze
 GAME_FILE = 'data/games.json'.freeze
