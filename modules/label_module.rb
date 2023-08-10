@@ -12,7 +12,10 @@ module LabelModule
     new_label = Label.new(title, color)
     @labels << new_label
     link_label_item(new_label)
-    puts 'label created successfully!'
+
+    puts '======================================='
+    puts '🤙    label created successfully!    👍'
+    puts '======================================='
   end
 
   def link_label_item(label)

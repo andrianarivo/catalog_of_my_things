@@ -12,7 +12,9 @@ module AuthorModule
     new_author = Author.new(first_name, last_name)
     @authors << new_author
     link_author_item(new_author)
-    puts 'author created successfully!'
+    puts '======================================='
+    puts '🤙    author created successfully!   👍'
+    puts '======================================='
   end
 
   def link_author_item(author)

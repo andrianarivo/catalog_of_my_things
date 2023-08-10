@@ -13,7 +13,9 @@ module GameModule
     game = Game.new(multi, last_played, publish_date)
     @games << game
     @items << game
-    puts 'Game created successfully'
+    puts '======================================='
+    puts '🤙     Game created successfully     👍'
+    puts '======================================='
   end
 
   def list_games

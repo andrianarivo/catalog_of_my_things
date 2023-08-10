@@ -14,7 +14,9 @@ module BookModule
     new_book = Book.new(publish_date, publisher, cover_state)
     @books << new_book
     @items << new_book
-    puts 'Book has been added successfully'
+    puts '======================================='
+    puts '🤙 Book has been added successfully 👍'
+    puts '======================================='
   end
 
   def list_books

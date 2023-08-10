@@ -8,9 +8,10 @@ module GenreModule
     name = gets.chomp
     genre = Genre.new(name)
     @genres << genre
-    puts 'Genre is successfully added!!'
-    puts ''
-    puts '==='
+
+    puts '======================================='
+    puts '🤙   Genre is successfully added!!   👍'
+    puts '======================================='
   end
 
   def list_all_genres
