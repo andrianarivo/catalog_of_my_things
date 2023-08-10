@@ -85,3 +85,13 @@ CREATE TABLE author(
   last_name VARCHAR(255),
   PRIMARY KEY(id)
 );
+
+CREATE INDEX on music_album(last_id)
+CREATE INDEX on music_album(genre_id)
+CREATE INDEX on music_album(author_id)
+CREATE INDEX on book(label_id)
+CREATE INDEX on book(genre_id)
+CREATE INDEX on book(author_id)
+CREATE INDEX on games(label_id)
+CREATE INDEX on games(genre_id)
+CREATE INDEX on games(author_id)
