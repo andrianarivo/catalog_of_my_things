@@ -1,5 +1,7 @@
 BOOK_FILE = 'data/books.json'.freeze
 LABEL_FILE = 'data/labels.json'.freeze
+GAME_FILE = 'data/games.json'.freeze
+AUTHOR_FILE = 'data/authors.json'.freeze
 
 module DataManager
   def save_files
@@ -7,9 +9,9 @@ module DataManager
     FileUtils.mkdir_p(directory_name)
 
     File.write(BOOK_FILE, @books.to_json)
-    File.write('data/games.json', @games.to_json)
+    File.write(GAME_FILE, @games.to_json)
     File.write('data/music_albums.json', @music_albums.to_json)
-    File.write('data/authors.json', @authors.to_json)
+    File.write(AUTHOR_FILE, @authors.to_json)
     File.write(LABEL_FILE, @labels.to_json)
     File.write('data/genres.json', @genres.to_json)
   end
@@ -28,8 +30,8 @@ module DataManager
 
   def load_games
     @games = []
-    if File.exist?('games.json')
-      JSON.parse(File.read('games.json')).map do |game|
+    if File.exist?(GAME_FILE)
+      JSON.parse(File.read(GAME_FILE)).map do |game|
         game_object = create_game_object(game)
         @games << game_object
         @items << game_object
@@ -62,6 +64,16 @@ module DataManager
     end
   end
 
+  def load_authors
+    @authors = []
+    if File.exist?(AUTHOR_FILE)
+      JSON.parse(File.read(AUTHOR_FILE)).map do |author|
+        author_object = create_author_object(author)
+        @authors << author_object
+      end
+    end
+  end
+
   private
 
   # rubocop:enable Style/GuardClause
@@ -79,5 +91,9 @@ module DataManager
 
   def create_label_object(label)
     Label.new(label['title'], label['color'])
+  end
+
+  def create_author_object(author)
+    Author.new(author['first_name'], author['last_name'])
   end
 end
