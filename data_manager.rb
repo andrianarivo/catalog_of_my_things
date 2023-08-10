@@ -8,7 +8,6 @@ module DataManager
   def save_files
     directory_name = 'data'
     FileUtils.mkdir_p(directory_name)
-
     File.write(BOOK_FILE, @books.to_json)
     File.write('data/games.json', @games.to_json)
     File.write(MUSIC_ALBUM_FILE, @music_albums.to_json)
@@ -67,10 +66,10 @@ module DataManager
 
   def load_genres
     @genres = []
-    if File.exist?(LABEL_FILE)
-      JSON.parse(File.read(LABEL_FILE)).map do |label|
-        label_object = create_genre_object(label)
-        @labels << label_object
+    if File.exist?(GENRE_FILE)
+      JSON.parse(File.read(GENRE_FILE)).map do |genre|
+        genre_object = create_genre_object(genre)
+        @genres << genre_object
       end
     end
   end
