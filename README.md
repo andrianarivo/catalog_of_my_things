@@ -24,7 +24,7 @@
 
 # 📖 Catalog of my things <a name="tdd"></a>
 
-Catalog of my things <a href="">video presentation</a>
+Catalog of my things <a href="https://docs.google.com/document/d/1o8axHKAY3yD02kn_S_Wt4HzfY7XAwFEQYK4WD1rWVvA/edit?usp=sharing">video presentation</a>
 
 ## 🛠 Built With <a name="built-with"></a>
 
