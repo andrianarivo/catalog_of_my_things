@@ -2,6 +2,8 @@ require 'fileutils'
 
 BOOK_FILE = 'data/books.json'.freeze
 LABEL_FILE = 'data/labels.json'.freeze
+MUSIC_ALBUM_FILE = 'data/music_album.json'.freeze
+GENRE_FILE = 'data/genres.json'.freeze
 GAME_FILE = 'data/games.json'.freeze
 AUTHOR_FILE = 'data/authors.json'.freeze
 
@@ -9,13 +11,12 @@ module DataManager
   def save_files
     directory_name = 'data'
     FileUtils.mkdir_p(directory_name)
-
     File.write(BOOK_FILE, @books.to_json)
     File.write(GAME_FILE, @games.to_json)
-    File.write('data/music_albums.json', @music_albums.to_json)
+    File.write(MUSIC_ALBUM_FILE, @music_albums.to_json)
     File.write(AUTHOR_FILE, @authors.to_json)
     File.write(LABEL_FILE, @labels.to_json)
-    File.write('data/genres.json', @genres.to_json)
+    File.write(GENRE_FILE, @genres.to_json)
   end
 
   # rubocop:disable Style/GuardClause
@@ -43,8 +44,8 @@ module DataManager
 
   def load_music_albums
     @music_albums = []
-    if File.exist?('music_albums.json')
-      JSON.parse(File.read('music_albums.json')).map do |music|
+    if File.exist?(MUSIC_ALBUM_FILE)
+      JSON.parse(File.read(MUSIC_ALBUM_FILE)).map do |music|
         publish_date = music['publish_date']
         archived = music['archived'] || nil
         on_spotify = music['on_spotify']
@@ -62,6 +63,16 @@ module DataManager
       JSON.parse(File.read(LABEL_FILE)).map do |label|
         label_object = create_label_object(label)
         @labels << label_object
+      end
+    end
+  end
+
+  def load_genres
+    @genres = []
+    if File.exist?(GENRE_FILE)
+      JSON.parse(File.read(GENRE_FILE)).map do |genre|
+        genre_object = create_genre_object(genre)
+        @genres << genre_object
       end
     end
   end
@@ -93,6 +104,10 @@ module DataManager
 
   def create_label_object(label)
     Label.new(label['title'], label['color'])
+  end
+
+  def create_genre_object(genre)
+    Genre.new(genre['name'])
   end
 
   def create_author_object(author)

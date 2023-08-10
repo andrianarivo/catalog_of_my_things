@@ -21,7 +21,7 @@ class App
     load_games
     load_music_albums
     load_books
-    @genres = []
+    load_genres
     load_labels
     load_authors
   end
