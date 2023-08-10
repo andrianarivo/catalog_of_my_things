@@ -10,7 +10,10 @@ module MusicAlbumModule
     on_spotify = gets.chomp
     music_album_instance = MusicAlbum.new(publish_date, on_spotify)
     @music_albums << music_album_instance
-    puts 'Music Album is created successfully'
+
+    puts '=========================================='
+    puts '🤙 Music Album is created successfully 👍'
+    puts '=========================================='
   end
 
   def list_music_album
